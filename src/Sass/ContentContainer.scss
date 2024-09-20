@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+$primary-background : #f5f7fa ;
+$secondary-background : #fff ;
+@mixin font-family($weight : 300){
+    font-family: 'Inter', sans-serif; 
+    font-weight: $weight ;
+}
+@mixin flex-center{
+    display: flex ;
+    align-items: center;
+    justify-content: center ;
+}
+@mixin flex-column{
+   display: flex ;
+   flex-direction: column ;
+}
+.content-cont{
+    @include flex-column ;
+    height: calc(100vh - 77px) ;
+    padding : 25px 30px 25px 30px ;
+    background-color: $primary-background ;    
+}
+.content-block-cont{
+    display: flex ;
+    justify-content: space-between ;
+    flex-wrap: wrap ;
+    .content-block{        
+        margin-right : 15px ;
+        margin-bottom: 20px ;
+        padding : 18px 19px 18px 19px ;  
+        background-color: $secondary-background ;      
+        border-radius: 10px ;
+        display: flex ;
+        .content-block-img{
+            @include flex-center ;
+            margin-right: 20px ;
+        }
+        .content-block-info{
+            @include flex-center ;
+            flex-direction: column ;
+            .content-block-key{
+                @include font-family(400) ;
+                color : #718EBF ;
+                margin-bottom : 10px ; 
+                font-size: 16px ;
+            }
+            .content-block-val{
+                @include font-family(600) ;                               
+                color : #000 ;
+                font-size: 18px ;
+            }
+        }
+    }    
+}
+.scrollVertical{
+    overflow-x: hidden ;
+    overflow-y: auto ;
+}
+.scrollVertical::-webkit-scrollbar {
+    width: 7px;
+}
+.scrollVertical::-webkit-scrollbar-track {
+    background: transparent ;
+}
+.scrollVertical::-webkit-scrollbar-thumb {
+    background: #888 ;
+}

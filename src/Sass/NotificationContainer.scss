@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+$background-color: #fff;
+$border-radius: 8px;
+$padding: 20px;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$border-color: #ddd;
+$text-color-dark: #666;
+$text-color-light: #999;
+$text-color-primary : #000 ;
+$font-bold: bold;
+
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+@mixin flex-align($position: relative) {
+  position: $position;
+  display: flex;
+  align-items: center;
+}
+@mixin font-family($weight : 300){
+    font-family: 'Inter', sans-serif; 
+    font-weight: $weight ;
+}
+.notification-cont {
+  background-color: $background-color;
+  border-radius: $border-radius;
+  padding: $padding;
+  box-shadow: $box-shadow;
+  position: absolute ;
+  right : 0px ;
+  top : 40px ;
+  width : 550px ;
+  max-height: 439px ;
+  box-shadow: -1px 0px 13px 4px rgba(0, 0, 0, 0.1) ;
+
+  h2 {
+    @include font-size(18px);
+    @include font-family(700) ;
+    margin-bottom: $padding;
+  }
+  .notification-header{
+      display: flex ;
+      justify-content: space-between ;
+  }
+  .notification-item {
+    border : 1px solid $border-color;
+    padding: 13px 8px ;
+    margin-top: 10px ;
+    border-radius: 8px ;
+    .notification-content-cont{        
+        display: flex  ;
+        justify-content: space-between ;
+        align-items: center ;
+        margin-top : 9px ;
+    }
+  }
+
+  .notification-title {
+    @include font-size(14px);    
+    @include font-family(600) ;
+    color : $text-color-primary ;
+    margin-bottom: 5px;
+  }
+
+  .notification-description {
+    color: $text-color-primary ;
+    @include font-size(14px);
+    @include font-family(400) ;
+  }
+
+  .notification-time {
+    color: $text-color-primary;
+    @include font-size(0.8rem);
+    @include font-family(400) ;
+    margin-top: 10px;
+  }
+
+  .close-button {
+    @include flex-align(absolute);
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: $text-color-dark;
+    @include font-size(1.2rem);
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $text-color-light;
+    }
+  }
+}
+.scrollVertical{
+    overflow-x: hidden ;
+    overflow-y: auto ;
+}
+.scrollVertical::-webkit-scrollbar {
+    width: 5px;
+}
+.scrollVertical::-webkit-scrollbar-track {
+    background: transparent ;
+}
+.scrollVertical::-webkit-scrollbar-thumb {
+    background: #888 ;
+}

@@ -1,0 +1,19 @@
+@mixin flex {
+    display: flex;
+}
+
+@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.container {
+    @include flex-container; 
+}
+
+.main-content {
+    @include flex-container(column) ; 
+    width : calc(100vw - 12.2rem) ;
+}

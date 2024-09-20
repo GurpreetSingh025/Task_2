@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@mixin font-family($weight : 300){
+    font-family: 'Inter', sans-serif; 
+    font-weight: $weight ;
+}
+.record-table-title{
+   @include font-family(600) ;
+   color: #333B69 ;
+   margin-bottom: 20px ;
+}
+.cp{
+    cursor: pointer ;
+}
+.record-overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  
+    th, td {
+      padding: 10px;
+      text-align: left;
+      font-size: 16px ;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    th {
+      @include font-family(500) ;      
+      color : #718EBF ;
+      background-color: #f2f2f2;      
+    }
+
+    td{
+        @include font-family(400) ;
+        color : #232323 ;
+    }
+    
+    .result-row td{
+        color: #FE5C73 ;
+    }
+  
+    .repay-button {
+       @include font-family(500) ;
+       border: 1px solid #232323 ;
+       border-radius: 40px ;
+       color: #232323 ;
+       padding: 8px 20px;
+       background-color: transparent ;
+       transition: .2s all ease ;
+       &:hover{
+          border : 1px solid #1814F3 ;
+          color : #1814F3 ;
+       }
+    }
+  }
+  

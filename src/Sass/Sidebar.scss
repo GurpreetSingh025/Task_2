@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@mixin flex{
+    display: flex ;
+}
+@mixin pointer{
+     cursor: pointer;
+}
+@mixin flex-center {
+    display: flex;
+    align-items: center ;
+}
+.sidebar {
+    width: 12.2rem ;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    border-bottom: 1px solid #e2e8f0;  
+    img{
+        width: 75% ;
+    }
+}
+.sidebar-menu {
+    margin-top: 1rem;
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            @include pointer ;
+            @include flex-center ;
+            padding : 0.8rem ;
+            padding-left: 1.7rem;
+            position: relative ;
+            color: #a0aec0;
+            // margin-bottom: 1.6rem; 
+            transition: .2s all ease ;       
+            font-family: 'Inter', sans-serif;   
+             svg , svg path {
+                transition: inherit;
+            }             
+            .label {
+                margin-left: 1.5rem;
+                font-size: 1rem;               
+            }
+            &:hover {
+                color: #1814f3 ;
+            }
+            &:hover .menu-highlight{
+                display: block;
+            }
+            &:hover svg path{
+                fill : #1814f3 ;
+            }
+            .menu-highlight{
+                position: absolute ;
+                left : 0px ;
+                top : 0px ;
+                display: none ;
+            }
+        }
+        li.clicked{
+            color : #1814f3 ;
+            svg path{
+                fill : #1814f3 ;
+            }
+            .menu-highlight{
+                display: block ;
+            }            
+        }
+    }
+}
+.scrollVertical{
+    overflow-x: hidden ;
+    overflow-y: auto ;
+}
+.scrollVertical::-webkit-scrollbar {
+    width: 5px;
+}
+.scrollVertical::-webkit-scrollbar-track {
+    background: transparent ;
+}
+.scrollVertical::-webkit-scrollbar-thumb {
+    background: #888 ;
+}
